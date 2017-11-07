@@ -3,6 +3,7 @@ package com.minor2k17.nimble;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +77,7 @@ public class simple_posting_books extends Fragment {
 
                 if (b_name != null && !b_name.equals("") && b_price != null && !b_price.equals("") && !b_descrp.equals("") && b_descrp != null && b_cnumber != null && !b_cnumber.equals("")) {
                     //TODO:Send data to Firebase Database
-                    HashMap<String,String> bookMap = new HashMap<String,String>();
+                    final HashMap<String,String> bookMap = new HashMap<String,String>();
                     bookMap.put("UserId",firebaseAuth.getCurrentUser().getUid());
                     bookMap.put("BookName",b_name);
                     bookMap.put("BookPrice",b_price);
@@ -101,6 +102,7 @@ public class simple_posting_books extends Fragment {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful())
                             {
+                                Log.i("bookmap", bookMap.toString());
                                 Toast.makeText(getActivity(), "Sucessfully Posted", Toast.LENGTH_SHORT).show();
                             }
                             else{

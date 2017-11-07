@@ -20,13 +20,15 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     boolean doubleBackToExitPressedOnce = false;
     Button year1,year2,year3,year4,fileserver;
-
-
+    String Username;
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
     @Override
     protected void onStart() {
         super.onStart();
@@ -54,15 +56,25 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+
+        Username="Anonymous";
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.chatfab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Loading Chats,press again after few seconds", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                if(Username!=null) {
+                    Intent intt = new Intent();
+                    intt.setClass(MainActivity.this, ChatSupport.class);
+                    intt.putExtra("Username", Username);
+                    intt.putExtra("Uid", mAuth.getCurrentUser().getUid());
+                    startActivity(intt);
+                }
+
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -136,6 +148,9 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+
+
 
     }
 

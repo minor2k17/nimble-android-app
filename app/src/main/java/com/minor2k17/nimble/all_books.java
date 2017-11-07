@@ -64,8 +64,9 @@ public class all_books extends Fragment {
                 Log.i("Book",value);
 
                 try {
+                    b_name = dataSnapshot.child("BookName").getValue().toString();
                     JSONObject object = new JSONObject(value);
-                    b_name = object.getString("BookName");
+                    //b_name = object.getString("BookName");
                     b_price = object.getString("BookPrice");
                     contact = object.getString("ContactNumber");
                     b_desc  = object.getString("Description");

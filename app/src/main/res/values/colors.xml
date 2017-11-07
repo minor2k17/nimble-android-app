@@ -9,4 +9,5 @@
     <color name="white">#FFFF</color>
     <color name="black">#000000</color>
     <color name="light_blue">#0099CC</color>
+    <color name="greydark">#d6dbdf</color>
 </resources>
