@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Camera" />
+        <item
+            android:id="@+id/nav_books"
+            android:icon="@drawable/ic_add_shopping_cart_black_24dp"
+            android:title="Buy Sell Books"/>
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_maps"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="Maps" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_icon"
+            android:title="Logout" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share App" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_chat_black_24dp"
+                android:title="Contact us" />
+        </menu>
+    </item>
+
+</menu>

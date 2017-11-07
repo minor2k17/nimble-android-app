@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">nimble</string>
+    <string name="app_name">Nimble</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="main_name">Nimble</string>
+    <string name="title_activity_contact_email">Contact_email</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="year1">Ist Year</string>
+    <string name="year2">IInd Year</string>
+    <string name="year3">IIIrd Year</string>
+    <string name="year4">IVth Year</string>
+    <string name="bookall">BOOKS</string>
+    <string name="simple">SIMPLE POSTING</string>
+    <string name="smart">SMART POSTING</string>
+    <string name="simple_book_description">Description (min 30 words like telliing about edition year, book condition, etc)</string>
+    <string name="simple_book_ad">Simple Book Ad</string>
 </resources>

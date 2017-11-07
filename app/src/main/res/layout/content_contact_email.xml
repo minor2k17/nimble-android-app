@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.minor2k17.contactform.MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:padding="12sp"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:text="Contact Form"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Name"
+        android:hint="Full Name"
+        android:inputType="textCapWords"
+        android:layout_marginBottom="5sp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subject"
+        android:hint="Subject"
+        android:inputType="textEmailSubject"
+        android:layout_marginBottom="5sp"/>
+
+    <EditText
+        android:id="@+id/body"
+        android:layout_marginBottom="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="10"
+        android:hint="Your Message"
+        android:gravity="top"
+        android:inputType="textAutoCorrect|textCapSentences|textMultiLine"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate Us"
+        android:layout_gravity="center"
+        android:textAppearance="?android:textAppearanceSmall"/>
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="5"
+        android:stepSize="1"
+        android:layout_gravity="center"
+        />
+    <ImageView
+        android:id="@+id/emoji"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/smile"/>
+    <Button
+        android:id="@+id/sendbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEND"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

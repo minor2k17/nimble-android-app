@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "373539897048",
+    "firebase_url": "https://nimble-minor2k17.firebaseio.com",
+    "project_id": "nimble-minor2k17",
+    "storage_bucket": "nimble-minor2k17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373539897048:android:50f012c8cc074502",
+        "android_client_info": {
+          "package_name": "com.minor2k17.nimble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "373539897048-it1solfvqsbfljq6bkieluob6ic6audk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minor2k17.nimble",
+            "certificate_hash": "816a9eea14ec5973bf4ac28744c95813aeb09c7b"
+          }
+        },
+        {
+          "client_id": "373539897048-pp5ldoa05iiq3inf7veuqjngdnmnua8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiwlamNN8HDe4NgMWYiJPZvFAxcoEh6mA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "373539897048-pp5ldoa05iiq3inf7veuqjngdnmnua8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

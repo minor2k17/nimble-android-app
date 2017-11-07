@@ -1,11 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.minor2k17.nimble">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/nimble_leaf"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/nimble_leaf"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Contact"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Contact_email"
+            android:label="@string/title_activity_contact_email"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".signup" />
+        <activity android:name=".signin" />
+        <activity
+            android:name=".signout"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".splashscreen_nimble">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".no_internet" />
+        <activity
+            android:name=".year_main_fragment"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".BooksPost"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity android:name=".ChatSupport"
+            android:parentActivityName=".MainActivity"/>
+    </application>
+
 </manifest>
