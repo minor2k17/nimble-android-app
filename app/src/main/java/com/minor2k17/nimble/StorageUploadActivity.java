@@ -176,7 +176,7 @@ public class StorageUploadActivity extends AppCompatActivity implements View.OnC
         } else if (view == buttonUpload) {
             uploadFile();
         } else if (view == textViewShow) {
-
+            onBackPressed();
         }
     }
 }

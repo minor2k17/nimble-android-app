@@ -86,7 +86,54 @@ public class StorageDisplayActivity extends AppCompatActivity implements View.On
         });
 
         fileAdd.setOnClickListener(StorageDisplayActivity.this);
+    }
 
+    @Override
+    public void onRestart(){
+        super.onRestart();
+        setContentView(R.layout.activity_storage_display);
+
+        fileAdd = (FloatingActionButton) findViewById(R.id.file_add);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        progressDialog = new ProgressDialog(this);
+
+        uploads = new ArrayList<>();
+
+        //displaying progress dialog while fetching images
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+        mDatabase = FirebaseDatabase.getInstance().getReference(DATABASE_PATH_UPLOADS);
+
+        //adding an event listener to fetch values
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                //dismissing the progress dialog
+                progressDialog.dismiss();
+
+                //iterating through all the values in database
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Upload upload = postSnapshot.getValue(Upload.class);
+                    uploads.add(upload);
+                }
+                //creating adapter
+                adapter = new StorageAdapter(getApplicationContext(), uploads);
+
+                //adding adapter to recyclerview
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                progressDialog.dismiss();
+            }
+        });
+
+        fileAdd.setOnClickListener(StorageDisplayActivity.this);
     }
 
     @Override

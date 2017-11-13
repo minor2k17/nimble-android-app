@@ -1,6 +1,10 @@
 package com.minor2k17.nimble;
 
+import android.app.DownloadManager;
 import android.content.Context;
+import android.net.Uri;
+import android.os.Environment;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +15,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import static android.content.Context.DOWNLOAD_SERVICE;
 
 /**
  * Created by Hopeless on 13-Nov-17.
@@ -57,11 +63,13 @@ public class StorageAdapter extends RecyclerView.Adapter<StorageAdapter.ViewHold
 
         public TextView textViewName;
         public ImageView imageView;
+        public FloatingActionButton downloadFile;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            textViewName = (TextView) itemView.findViewById(R.id.textViewName);
-            imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            textViewName = (TextView) itemView.findViewById(R.id.textView4);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView4);
+            //downloadFile = (FloatingActionButton) itemView.findViewById(R.id.downloadButton);
         }
     }
 }
