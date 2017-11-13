@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Nimble</string>
 
+    <array name="ftype">
+        <item>Image</item>
+        <item>PDF</item>
+        <item>Text</item>
+    </array>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

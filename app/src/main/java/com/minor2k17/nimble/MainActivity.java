@@ -111,9 +111,15 @@ public class MainActivity extends AppCompatActivity
         year4 = (Button) findViewById(R.id.year4);
         fileserver = (Button) findViewById(R.id.fileserver);
 
-        /*
-        TODO: ADD fileserver google drive api
-         */
+        fileserver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,StorageDisplayActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT,"0");
+                startActivity(intent);
+            }
+        });
+
         year1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
