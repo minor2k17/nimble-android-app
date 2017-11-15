@@ -20,15 +20,25 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseDatabase db = FirebaseDatabase.getInstance();
+    DatabaseReference rootRef = db.getReference();
+    DatabaseReference UserRef = rootRef.child("User");
+
     boolean doubleBackToExitPressedOnce = false;
     Button year1,year2,year3,year4,fileserver;
     String Username;
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -56,7 +66,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        final HashMap<String,String> userMap = new HashMap<String, String>();
+        userMap.put("TokenID",SharedPreManager.getInstance(MainActivity.this).getToken());
+        UserRef.child(mAuth.getCurrentUser().getUid()).setValue(userMap);
 
         Username="Anonymous";
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.chatfab);
@@ -244,6 +256,10 @@ public class MainActivity extends AppCompatActivity
         else if(id==R.id.nav_logout){
             Intent intent = new Intent(MainActivity.this ,signout.class);
             startActivity(intent);
+        }
+
+        else if(id==R.id.nav_notifications){
+            startActivity(new Intent(MainActivity.this,Recentupdates.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
