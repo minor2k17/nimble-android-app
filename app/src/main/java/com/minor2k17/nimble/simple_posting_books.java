@@ -54,6 +54,9 @@ public class simple_posting_books extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_simple_posting_books, container, false);
 
+        // Get the title of the book from smart posting
+        final String smarttitle = getArguments().getString("title");
+
         book_name = view.findViewById(R.id.book_name_input);
         book_price = view.findViewById(R.id.book_price_input);
         book_descrp = view.findViewById(R.id.book_simple_description_input);
@@ -68,6 +71,9 @@ public class simple_posting_books extends Fragment {
             public void onClick(View view) {
 
                 //Get text from edit text
+                if (smarttitle != null){
+                    book_name.setText(smarttitle, TextView.BufferType.EDITABLE);
+                }
                 b_name = book_name.getText().toString().trim();
                 b_price = book_price.getText().toString().trim();
                 b_descrp = book_descrp.getText().toString().trim();

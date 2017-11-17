@@ -1,17 +1,112 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.minor2k17.nimble.smart_posting_books">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/cardview_dark_background"
+        android:weightSum="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Smart posting"/>
-    </android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:id="@+id/ImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background">
 
+            <ImageView
+                android:id="@+id/testImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/OCRButtonContainer"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@color/cardview_dark_background"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:src="@android:drawable/ic_menu_gallery" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/OCRbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Run OCR"
+                    android:layout_marginRight="8dp"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/SaveFeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:src="@android:drawable/ic_menu_camera" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/OCRTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:background="@color/cardview_dark_background">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/OCRTextView"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:text="OCR Text will appear here"
+                    android:textColor="#a3a3a3"
+                    android:textSize="18dp" />
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
 </FrameLayout>

@@ -1,5 +1,9 @@
 package com.minor2k17.nimble;
 
+/**
+ * Created by Hopeless on 13-Nov-17.
+ */
+
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
