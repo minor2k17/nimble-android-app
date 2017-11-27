@@ -23,7 +23,7 @@
                 android:id="@+id/testImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerInside" />
+                android:scaleType="fitXY" />
 
         </RelativeLayout>
 
@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
+                <EditText
                     android:id="@+id/OCRTextView"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
@@ -102,8 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:clickable="true"
-                    android:text="OCR Text will appear here"
+                    android:text="Set OCR Text in the following format:\n//Book Title\n//Author"
                     android:textColor="#a3a3a3"
                     android:textSize="18dp" />
             </ScrollView>

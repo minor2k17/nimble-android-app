@@ -86,22 +86,18 @@ public class smart_posting_books extends Fragment implements View.OnClickListene
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == CAMERA_REQUEST) {
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            image = photo;
+            testImage.setImageBitmap(photo);
+        }
+        else if (resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
             if (requestCode == PICK_IMAGE_REQUEST) {
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), filePath);
                     image = bitmap;
                     testImage.setImageBitmap(bitmap);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            else if (requestCode == CAMERA_REQUEST) {
-                try {
-                    Bitmap photo = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), filePath);
-                    image = photo;
-                    testImage.setImageBitmap(photo);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -168,13 +164,13 @@ public class smart_posting_books extends Fragment implements View.OnClickListene
             processImage();
         }
         else if (view == save){
-            //Set the value for transaction
+            /*//Set the value for transaction
             simple_posting_books fragobj = new simple_posting_books();
             Bundle args = new Bundle();
             args.putString("title", String.valueOf(OCRTextView.getText()));
             fragobj.setArguments(args);
             //Inflate the fragment
-            getFragmentManager().beginTransaction().add(R.id.container, fragobj).commit();
+            getFragmentManager().beginTransaction().add(R.id.container, fragobj).commit();*/
         }
     }
 }

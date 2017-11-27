@@ -4,13 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.minor2k17.nimble.simple_posting_books">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/simple_ad"
@@ -37,6 +34,7 @@
             android:layout_height="46dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
@@ -45,9 +43,30 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.307"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.181" />
+            app:layout_constraintVertical_bias="0.126" />
+
+        <EditText
+            android:id="@+id/book_author"
+            android:layout_width="342dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Enter Book Author(s)"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.307"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26" />
 
         <EditText
             android:id="@+id/book_price_input"
@@ -55,6 +74,7 @@
             android:layout_height="46dp"
             android:layout_marginBottom="80dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
@@ -64,9 +84,10 @@
             app:layout_constraintBottom_toTopOf="@+id/book_simple_description_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.82" />
+            app:layout_constraintVertical_bias="0.742" />
 
 
         <CheckBox
@@ -80,10 +101,10 @@
             android:text="Negotiable"
             app:layout_constraintBottom_toTopOf="@+id/book_simple_description_input"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.772"
+            app:layout_constraintHorizontal_bias="0.894"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/book_name_input"
-            app:layout_constraintVertical_bias="0.136" />
+            app:layout_constraintVertical_bias="0.496" />
 
         <EditText
             android:id="@+id/book_person_contact_input"
@@ -91,6 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
@@ -99,9 +121,10 @@
             app:layout_constraintBottom_toTopOf="@+id/book_simple_description_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/book_price_input"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.113" />
 
         <EditText
             android:id="@+id/book_person_email_input"
@@ -109,6 +132,7 @@
             android:layout_height="43dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
@@ -117,17 +141,16 @@
             app:layout_constraintBottom_toTopOf="@+id/book_simple_description_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/book_person_contact_input"
-            app:layout_constraintVertical_bias="0.375" />
+            app:layout_constraintVertical_bias="0.368" />
 
         <EditText
             android:id="@+id/book_simple_description_input"
             android:layout_width="336dp"
             android:layout_height="85dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:gravity="top"
@@ -137,29 +160,31 @@
             android:minLines="2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/book_name_input"
-            app:layout_constraintVertical_bias="0.727" />
+            app:layout_constraintVertical_bias="0.843" />
 
         <Button
             android:id="@+id/book_simple_form_button"
             android:layout_width="88dp"
             android:layout_height="48dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="@color/colorPrimaryLight"
             android:elevation="15dp"
             android:text="post"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/book_simple_description_input"
-            app:layout_constraintVertical_bias="0.606" />
+            app:layout_constraintVertical_bias="0.578" />
 
 
     </android.support.constraint.ConstraintLayout>
-    </ScrollView>
+
 </FrameLayout>
