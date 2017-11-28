@@ -5,12 +5,38 @@
     android:layout_height="match_parent"
     tools:context="com.minor2k17.nimble.smart_posting_books">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/cardview_dark_background"
         android:weightSum="1">
+
+        <RelativeLayout
+            android:id="@+id/OCRTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/cardview_dark_background">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/OCRTextView"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Format: Line separated\n>> Book Price PhoneNo <<"
+                    android:textColor="#a3a3a3"
+                    android:textSize="18dp" />
+            </ScrollView>
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/ImageContainer"
@@ -83,29 +109,5 @@
                 android:src="@android:drawable/ic_menu_camera" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/OCRTextContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
-            android:background="@color/cardview_dark_background">
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <EditText
-                    android:id="@+id/OCRTextView"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="Set OCR Text in the following format:\n//Book Title\n//Author"
-                    android:textColor="#a3a3a3"
-                    android:textSize="18dp" />
-            </ScrollView>
-        </RelativeLayout>
     </LinearLayout>
 </FrameLayout>

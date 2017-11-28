@@ -12,8 +12,10 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +23,13 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import java.io.File;
@@ -30,10 +38,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 
 import static android.app.Activity.RESULT_OK;
 
 public class smart_posting_books extends Fragment implements View.OnClickListener {
+
+    FirebaseDatabase db = FirebaseDatabase.getInstance();
+    DatabaseReference rootRef = db.getReference();
+    DatabaseReference bookRef = rootRef.child("BookAds");
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     private Uri filePath;
     private static final int PICK_IMAGE_REQUEST = 111;
@@ -80,7 +94,7 @@ public class smart_posting_books extends Fragment implements View.OnClickListene
         String OCRresult = null;
         mTess.setImage(image);
         OCRresult = mTess.getUTF8Text();
-        OCRTextView.setText(OCRresult);
+        OCRTextView.setText(">> Book Price PhoneNo <<\r\n" + OCRresult);
     }
 
     @Override
@@ -164,13 +178,42 @@ public class smart_posting_books extends Fragment implements View.OnClickListene
             processImage();
         }
         else if (view == save){
-            /*//Set the value for transaction
-            simple_posting_books fragobj = new simple_posting_books();
-            Bundle args = new Bundle();
-            args.putString("title", String.valueOf(OCRTextView.getText()));
-            fragobj.setArguments(args);
-            //Inflate the fragment
-            getFragmentManager().beginTransaction().add(R.id.container, fragobj).commit();*/
+            String extract = OCRTextView.getText().toString().trim();
+            String lines[] = extract.split("\\r?\\n");
+            String b_name = lines[1], b_price = lines[2], b_cnumber = lines[3];
+            String b_descrp = "None", b_email = "Anonymous";
+
+            if (b_name != null && !b_name.equals("") && b_price != null && !b_price.equals("") && !b_descrp.equals("") && b_descrp != null && b_cnumber != null && !b_cnumber.equals("")) {
+                //TODO:Send data to Firebase Database
+                final HashMap<String,String> bookMap = new HashMap<String,String>();
+                bookMap.put("UserId",firebaseAuth.getCurrentUser().getUid());
+                bookMap.put("BookName",b_name);
+                bookMap.put("BookPrice",b_price);
+                bookMap.put("Negotiable","true");
+                bookMap.put("Description",b_descrp);
+                bookMap.put("ContactNumber",b_cnumber);
+
+                if(b_email!=null && !b_email.equals(""))
+                    bookMap.put("Email",b_email);
+                else
+                    bookMap.put("Email","nimblehelp@gmail.com");
+                //Datapush to Database
+                bookRef.push().setValue(bookMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful())
+                        {
+                            Log.i("bookmap", bookMap.toString());
+                            Toast.makeText(getContext(), "Sucessfully Posted", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(getContext(), "Please Try Again", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            } else {
+                Toast.makeText(getContext(), "Invalid Input", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

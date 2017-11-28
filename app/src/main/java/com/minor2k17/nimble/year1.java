@@ -16,10 +16,11 @@ public class year1 extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_year1,container,false);
 
+        String url1 = "Random Download Link";
         final ArrayList<year_list> androidYear = new ArrayList<year_list>();
-        androidYear.add(new year_list("Computer Networks",R.drawable.nimblelogo));
-        androidYear.add(new year_list("OSSP",R.drawable.smile));
-        androidYear.add(new year_list("SDF",R.drawable.sad));
+        androidYear.add(new year_list("Computer Networks", url1, R.drawable.pdficon));
+        androidYear.add(new year_list("OSSP", url1, R.drawable.pdficon));
+        androidYear.add(new year_list("SDF", url1, R.drawable.pdficon));
 
         year_adapter adapter = new year_adapter(getActivity(), androidYear);
         ListView listview = (ListView) rootView.findViewById(R.id.listview_year1);

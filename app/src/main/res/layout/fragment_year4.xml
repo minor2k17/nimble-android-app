@@ -5,9 +5,9 @@
     tools:context="com.minor2k17.nimble.year4">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/listview_year4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="year4" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

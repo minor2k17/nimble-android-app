@@ -7,6 +7,13 @@
         <item>Text</item>
     </array>
 
+    <array name="ytype">
+        <item>Year1</item>
+        <item>Year2</item>
+        <item>Year3</item>
+        <item>Year4</item>
+    </array>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -26,4 +33,12 @@
     <string name="simple_book_description">Description (min 30 words like telliing about edition year, book condition, etc)</string>
     <string name="simple_book_ad">Simple Book Ad</string>
     <string name="b4_meaning">Nimble is a app the aims to help and support students. Nimble meaning fast and easy. We are here to support you.</string>
+
+    <string name="download_Pdf">Download pdf</string>
+    <string name="download_Doc">Download Doc</string>
+    <string name="openFolder">Open Downloaded Folder</string>
+    <string name="downloadStarted">Download Started…</string>
+    <string name="downloadCompleted">Download Completed…</string>
+    <string name="downloadFailed">Download Failed…</string>
+    <string name="downloadAgain">Download Again</string>
 </resources>

@@ -5,17 +5,22 @@ package com.minor2k17.nimble;
  */
 
 public class year_list {
-    private String mlistyeartitle;
+    private String mlistyeartitle, mlistyearlink;
     private int mImageResourceId;
 
-    public year_list(String vlistyeartile,int imageId)
+    public year_list(String vlistyeartile, String vlistyearlink, int imageId)
     {
         mlistyeartitle=vlistyeartile;
+        mlistyearlink=vlistyearlink;
         mImageResourceId=imageId;
+
     }
 
     public String getlisttitle(){
         return mlistyeartitle;
+    }
+    public String getlistlink(){
+        return mlistyearlink;
     }
     public int getmImageResourceId(){
         return mImageResourceId;

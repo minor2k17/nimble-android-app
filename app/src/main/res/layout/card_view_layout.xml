@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textView6"
+                    card_view:layout_constraintBottom_toTopOf="@+id/book_description_display"
                     card_view:layout_constraintEnd_toEndOf="parent"
                     card_view:layout_constraintHorizontal_bias="0.0"
                     card_view:layout_constraintStart_toStartOf="parent"
@@ -154,9 +154,9 @@
                     card_view:layout_constraintEnd_toEndOf="parent"
                     card_view:layout_constraintHorizontal_bias="0.0"
                     card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textView6"
+                    card_view:layout_constraintTop_toBottomOf="@+id/book_contact_email"
                     card_view:layout_constraintVertical_bias="0.0"
-                    tools:text="Condition excellent best for computer science" />
+                    tools:text="Condition excellent for computer science" />
 
 
             </android.support.constraint.ConstraintLayout>

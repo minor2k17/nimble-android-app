@@ -39,9 +39,11 @@ public class year_adapter extends ArrayAdapter<year_list> {
         //Listitem position
         year_list current_year = getItem(position);
 
-        //for Miwok text display
         TextView nameTextView = (TextView) v.findViewById(R.id.list_item_title);
         nameTextView.setText(current_year.getlisttitle());
+
+        TextView linkTextView = (TextView) v.findViewById(R.id.list_item_link);
+        linkTextView.setText(current_year.getlistlink());
 
         ImageView imageview = (ImageView) v.findViewById(R.id.list_item_icon);
         imageview.setImageResource(current_year.getmImageResourceId());
