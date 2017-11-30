@@ -94,7 +94,7 @@ public class smart_posting_books extends Fragment implements View.OnClickListene
         String OCRresult = null;
         mTess.setImage(image);
         OCRresult = mTess.getUTF8Text();
-        OCRTextView.setText(">> Book Price PhoneNo <<\r\n" + OCRresult);
+        OCRTextView.setText("[Book Price PhoneNo]\r\n" + OCRresult);
     }
 
     @Override

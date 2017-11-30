@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:text="Format: Line separated\n>> Book Price PhoneNo <<"
+                    android:text="[Book Price PhoneNo]"
                     android:textColor="#a3a3a3"
                     android:textSize="18dp" />
             </ScrollView>
